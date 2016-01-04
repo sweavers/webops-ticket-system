@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+th {
+    text-align: left;
+}
+</style>
+</head>
+<body>
+
+<table style="width:75%">
+  <tr>
+    <th>Project</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Contact</th>
+    <th>Priority</th>
+    <th>Status</th>
+  </tr>
+  {% for key, value in ticket_data.items() %}
+  <tr>
+    <td>{{ key }}</td>
+    <td>{{ value }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="col-md-12 top-margin">
+  <div class="col-md-2">
+    <a class="btn btn-info" href="/create_ticket">Create Ticket</a>
+  </div>
+</div>
+{% endblock %}
